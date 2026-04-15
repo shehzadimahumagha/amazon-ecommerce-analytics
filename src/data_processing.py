@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
+PROCESSED_DIR = Path(__file__).resolve().parent.parent / "data" / "processed"
+
 CSV_FILES = {
     "orders": "olist_orders_dataset.csv",
     "order_items": "olist_order_items_dataset.csv",
@@ -135,13 +137,19 @@ def validate_data(df):
     return df
 
 
-def save_processed(df, path):
+def save_processed(df, path=None, out_dir=None):
+    if path is None:
+        out_dir = Path(out_dir) if out_dir is not None else PROCESSED_DIR
+        path = out_dir / "master_clean.parquet"
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     df = df.copy()
-    for col in df.select_dtypes(include="period").columns:
-        df[col] = df[col].astype(str)
+    for col in df.columns:
+        if isinstance(df[col].dtype, pd.PeriodDtype):
+            df[col] = df[col].astype(str)
     df.to_parquet(path, index=False)
+    print(f"saved -> {path}")
+    return path
 
 
 def load_processed(path):

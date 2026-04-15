@@ -71,3 +71,45 @@ Build a customer analytics pipeline that enables the marketing team to:
 - Real-time scoring pipeline (out of scope for a static portfolio project)
 - Seller-side analytics (focus is customer-side)
 - Geographic/geolocation deep-dive (available in the data but not the core thesis)
+
+---
+
+## Key Findings
+
+*Numbers derived from outputs/tables/ after running notebooks 01–05.*
+
+### Scale and Baseline
+- **96,477 delivered orders** across 93,357 unique customers (Oct 2016 – Aug 2018)
+- **Total revenue: R$15,422,462** | AOV: R$159.86 | Median order: R$105.28
+- **97% of customers placed only one order** — repeat purchase rate is 3.00%
+
+### Retention
+- **M1 cohort retention: 0.48%** — fewer than 1 in 200 customers places a second order within their first month
+- **M3 cohort retention: 0.25%** — retention continues falling steeply and plateaus below 0.3% by month 3
+- The critical re-engagement window is the **first 30 days** after acquisition
+
+### Customer Segmentation (RFM)
+- **Champions (6.9% of customers) drive 13.1% of revenue** — avg order value R$312 vs. R$160 platform average
+- **Loyal Customers** is the largest segment (29.1% of customers, 23.7% of revenue)
+- RFM segments align with CLV tiers, confirming RFM is a valid operational proxy for predicted LTV
+
+### CLV Concentration (Pareto)
+- **Platinum tier (25.0% of customers) generates 59.2% of revenue** (avg CLV: R$390.70)
+- Bottom 50% (Bronze + Silver tiers) accounts for only 19.3% of revenue
+- Revenue concentration significantly exceeds a classic 80/20 split — the top quartile captures nearly 60%
+
+### Free-Shipping Experiment
+- Free-shipping orders show **−30.2% lower revenue per order** vs. paid-shipping (t-test p < 0.0001, Cohen's d = −0.301)
+- **Regression-adjusted ATE: −R$22.59 per order** (OLS with HC3 robust errors, R² = 0.908)
+- Free-shipping orders score **+0.23 pts higher on review scores** (p = 0.0002), suggesting a satisfaction benefit even where AOV is lower
+- Finding is from observational data; a randomised trial with an AOV threshold is recommended before policy change
+
+### Delivery & Satisfaction
+- **Avg delivery: 12.1 days** | Median: 10 days
+- **Review score drops 2.26 points** from the fastest delivery bin (1–5 days: 4.43/5) to the slowest (31–60 days: 2.17/5)
+- Delivery speed is a direct, measurable lever on customer satisfaction and downstream retention probability
+
+### Entry Category & Loyalty
+- **home_appliances has the highest repeat rate at 8.74%** — nearly 3× the platform average
+- Other high-repeat entry categories: fashion_male_clothing (6.93%), furniture_bedroom (6.10%), fashion_bags_accessories (5.88%)
+- Acquisition campaigns targeting high-retention entry categories produce customers with structurally higher predicted LTV

@@ -118,25 +118,39 @@ pip install pandas numpy matplotlib seaborn scipy statsmodels lifetimes squarify
 
 ## Results
 
-*Run the notebooks with your downloaded data and fill in the numbers below.*
-
 | Metric | Value |
 |---|---|
-| Total delivered orders | — |
-| Unique customers | — |
-| Overall repeat purchase rate | — |
-| M1 cohort retention (avg across cohorts) | — |
-| M3 cohort retention (avg across cohorts) | — |
-| Champions segment: % of customers | — |
-| Champions segment: % of revenue | — |
-| Platinum CLV tier: % of customers | — |
-| Platinum CLV tier: % of revenue | — |
-| Free-shipping revenue lift (t-test) | — |
-| Free-shipping lift p-value | — |
-| Free-shipping Cohen's d | — |
-| Regression-adjusted ATE (revenue) | — |
-| Top entry category by repeat rate | — |
-| Review score gap: fast vs slow delivery | — |
+| Total delivered orders | 96,477 |
+| Unique customers | 93,357 |
+| Overall repeat purchase rate | 3.00% |
+| M1 cohort retention (avg across cohorts) | 0.48% |
+| M3 cohort retention (avg across cohorts) | 0.25% |
+| Champions segment: % of customers | 6.9% |
+| Champions segment: % of revenue | 13.1% |
+| Platinum CLV tier: % of customers | 25.0% |
+| Platinum CLV tier: % of revenue | 59.2% |
+| Free-shipping revenue lift (t-test) | −30.2% |
+| Free-shipping lift p-value | < 0.0001 |
+| Free-shipping Cohen's d | −0.301 |
+| Regression-adjusted ATE (revenue) | −R$22.59 |
+| Top entry category by repeat rate | home_appliances (8.74%) |
+| Review score gap: fast vs slow delivery | 2.26 pts (4.43 → 2.17) |
+
+### Executive Dashboard
+
+![Executive Dashboard](outputs/figures/05_executive_dashboard.png)
+
+### Cohort Retention Heatmap
+
+Each row is a first-purchase cohort; each column is months since acquisition. The near-total drop after month 0 illustrates the 97% single-purchase rate and the narrow re-engagement window.
+
+![Cohort Retention Heatmap](outputs/figures/03_cohort_retention_heatmap.png)
+
+### RFM Segment Treemap
+
+Area is proportional to segment revenue. Champions (top-right) account for 13.1% of revenue despite being only 6.9% of customers. Loyal Customers is the largest block by headcount.
+
+![RFM Segment Treemap](outputs/figures/03_rfm_treemap.png)
 
 ---
 

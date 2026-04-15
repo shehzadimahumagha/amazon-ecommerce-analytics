@@ -44,7 +44,6 @@ data/processed/*.parquet
 !data/processed/.gitkeep
 
 # Outputs (regenerated)
-outputs/figures/*.png
 outputs/figures/*.html
 outputs/tables/*.csv
 !outputs/figures/.gitkeep
